@@ -747,6 +747,22 @@ NAMBOUR  QLD 4560</p>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    <script>
+    // Select all links inside the navbar collapse
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+    const navbarCollapse = document.getElementById('navbarCollapse');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            // Collapse the menu if it's open
+            if (navbarCollapse.classList.contains('show')) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: true });
+                bsCollapse.hide();
+            }
+        });
+    });
+</script>
+
 </body>
 
 </html>
